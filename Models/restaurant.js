@@ -16,9 +16,7 @@ var zomato = new Schema({
         default: Date.now
     },
     updated_at: Date,
-    image: {type: String},
-    subcategory: {type: Schema.ObjectId, ref: 'product'}
-
+    menu_image:{type:String}
 
 });
 

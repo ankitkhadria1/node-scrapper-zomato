@@ -1,0 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+.idea/workspace.xml
+.DS_Store
+npm-debug.log

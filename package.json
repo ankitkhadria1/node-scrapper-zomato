@@ -15,6 +15,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "jade": "^1.11.0",
+    "json2csv": "^3.6.1",
     "jsonwebtoken": "^7.0.1",
     "mongoose": "^4.5.1",
     "omdb": "^0.5.0",

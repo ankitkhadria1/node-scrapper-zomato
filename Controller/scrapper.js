@@ -4,6 +4,8 @@
 var request = require('request');
 var cheerio = require('cheerio');
 var URL = require('url-parse');
+var json2csv = require('json2csv');
+var fs = require('fs');
 var connection = require('./connection')
 var sendResponse = require('./errorResponse.js');
 var zomato = require('../Services/zomatoService');
@@ -107,7 +109,18 @@ exports.getRestaurantDetails = function (request,reply)
             return sendResponse.sendErrorMessage(msg,reply,400);
         }
         else {
-            return sendResponse.sendSuccessData(result,"Successful",reply,200);
+
+            var fields = ['restaurant_url', 'name', 'res_id','location','cuisines','average_cost_for_two','menu_image'];
+            var csv = json2csv({ data: result, fields: fields });
+
+            fs.writeFile('file.csv', csv, function(err) {
+                if (err) throw err;
+                else
+                {
+                    return sendResponse.sendSuccessData(result,"Successful",reply,200);
+                }
+            });
+
 
         }
 

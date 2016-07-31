@@ -9,7 +9,7 @@ var fs = require('fs');
 var connection = require('./connection')
 var sendResponse = require('./errorResponse.js');
 var zomato = require('../Services/zomatoService');
-var ACCESS_TOKEN = "6731d0a864dfd26d45b899b225ee9302";
+var ACCESS_TOKEN = "";
 var API_END_POINT = 'https://developers.zomato.com/api/v2.1';
 
 function  callApi(resource, qs, callback) {
